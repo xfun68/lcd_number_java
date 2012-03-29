@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class Digit {
     private final String[][] digits = {
         {" - ", "| |", "   ", "| |", " - "},
@@ -14,49 +12,15 @@ public class Digit {
         {" - ", "| |", " - ", "  |", " - "}
     };
 
-    public static final int DEFAULT_SIZE = 1;
+    public static final int COUNT_OF_LINES = 5;
 
-    private int size;
-    private ArrayList<String> extended_lines = new ArrayList<String>();
+    private String[] lines;
 
     public Digit(String number) {
-        this(number, DEFAULT_SIZE);
-    }
-
-    public Digit(String number, int size) {
-        this.size = size;
-        init_strokes(number);
-    }
-
-    private void init_strokes(String number) {
-        String[] lines = digits[Integer.parseInt(number)];
-        for (int line_number = 0; line_number < lines.length; line_number++) {
-            extended_lines.add(lines[line_number]);
-            if (is_vertical_line(line_number)) {
-                for (int i = 1; i < this.size; i++) {
-                    extended_lines.add(lines[line_number]);
-                }
-            }
-        }
-    }
-
-    private boolean is_vertical_line(int line_number) {
-        return line_number % 2 != 0;
-    }
-
-    public int count_of_lines() {
-        return 3 + (2 * this.size);
+        this.lines = digits[Integer.parseInt(number)];
     }
 
     public String line_at(int line_index) {
-        return extend_line_horizontally(extended_lines.get(line_index));
-    }
-
-    private String extend_line_horizontally(String line) {
-        String middle = "";
-        for (int i = 0; i < this.size; i++) {
-            middle += line.substring(1, 2);
-        }
-        return line.substring(0, 1) + middle + line.substring(2);
+        return this.lines[line_index];
     }
 }

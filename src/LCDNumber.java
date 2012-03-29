@@ -16,24 +16,24 @@ public class LCDNumber {
 
     public String print() {
         String result = "";
-        for (String line : lines_for_digits()) {
-            result += line + "\n";
-        }
+        String[] lines = new Scaler(this.size).scale(lines_for_digits());
+        for (String line : lines) result += line + "\n";
         return result;
     }
 
-    private ArrayList<String> lines_for_digits() {
+    private String[] lines_for_digits() {
         ArrayList<String> lines = new ArrayList<String>();
-        for (int i = 0; i < new Digit("0", this.size).count_of_lines(); i++) {
-            lines.add(join_line_for_each_number(i));
+        for (int line_index = 0; line_index < Digit.COUNT_OF_LINES; line_index++) {
+            lines.add(join_lines_of_each_digits(line_index));
         }
-        return lines;
+        return lines.toArray(new String[0]);
     }
 
-    private String join_line_for_each_number(int i) {
+    private String join_lines_of_each_digits(int line_index) {
         String line = "";
-        for (int j = 0; j < this.numbers.length(); j++) {
-            line += new Digit(this.numbers.substring(j, j+1), this.size).line_at(i);
+        for (int i = 0; i < this.numbers.length(); i++) {
+            String current_number = this.numbers.substring(i, i + 1);
+            line += new Digit(current_number).line_at(line_index);
         }
         return line;
     }

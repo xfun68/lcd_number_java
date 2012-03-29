@@ -14,11 +14,13 @@ public class Digit {
         {" - ", "| |", " - ", "  |", " - "}
     };
 
+    public static final int DEFAULT_SIZE = 1;
+
     private int size;
     private ArrayList<String> extended_lines = new ArrayList<String>();
 
     public Digit(String number) {
-        this(number, 1);
+        this(number, DEFAULT_SIZE);
     }
 
     public Digit(String number, int size) {

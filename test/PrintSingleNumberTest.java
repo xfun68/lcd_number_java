@@ -3,7 +3,7 @@ import org.junit.Test;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-public class LCDNumberTest {
+public class PrintSingleNumberTest {
     @Test
     public void should_print_0() {
         LCDNumber lcdNumber = new LCDNumber("0");
@@ -13,7 +13,7 @@ public class LCDNumberTest {
                         "   \n" +
                         "| |\n" +
                         " - \n";
-        assertThat(lcdNumber.toString(), is(expected));
+        assertThat(lcdNumber.print(), is(expected));
     }
 
     @Test
@@ -25,7 +25,7 @@ public class LCDNumberTest {
                         "   \n" +
                         "  |\n" +
                         "   \n";
-        assertThat(lcdNumber.toString(), is(expected));
+        assertThat(lcdNumber.print(), is(expected));
     }
 
     @Test
@@ -37,7 +37,7 @@ public class LCDNumberTest {
                         " - \n" +
                         "|  \n" +
                         " - \n";
-        assertThat(lcdNumber.toString(), is(expected));
+        assertThat(lcdNumber.print(), is(expected));
     }
 
     @Test
@@ -49,7 +49,7 @@ public class LCDNumberTest {
                         " - \n" +
                         "  |\n" +
                         " - \n";
-        assertThat(lcdNumber.toString(), is(expected));
+        assertThat(lcdNumber.print(), is(expected));
     }
 
     @Test
@@ -61,7 +61,7 @@ public class LCDNumberTest {
                         " - \n" +
                         "  |\n" +
                         "   \n";
-        assertThat(lcdNumber.toString(), is(expected));
+        assertThat(lcdNumber.print(), is(expected));
     }
 
     @Test
@@ -73,7 +73,7 @@ public class LCDNumberTest {
                         " - \n" +
                         "  |\n" +
                         " - \n";
-        assertThat(lcdNumber.toString(), is(expected));
+        assertThat(lcdNumber.print(), is(expected));
     }
 
     @Test
@@ -85,7 +85,7 @@ public class LCDNumberTest {
                         " - \n" +
                         "| |\n" +
                         " - \n";
-        assertThat(lcdNumber.toString(), is(expected));
+        assertThat(lcdNumber.print(), is(expected));
     }
 
     @Test
@@ -97,7 +97,7 @@ public class LCDNumberTest {
                         "   \n" +
                         "  |\n" +
                         "   \n";
-        assertThat(lcdNumber.toString(), is(expected));
+        assertThat(lcdNumber.print(), is(expected));
     }
 
     @Test
@@ -109,7 +109,7 @@ public class LCDNumberTest {
                         " - \n" +
                         "| |\n" +
                         " - \n";
-        assertThat(lcdNumber.toString(), is(expected));
+        assertThat(lcdNumber.print(), is(expected));
     }
 
     @Test
@@ -121,6 +121,6 @@ public class LCDNumberTest {
                         " - \n" +
                         "  |\n" +
                         " - \n";
-        assertThat(lcdNumber.toString(), is(expected));
+        assertThat(lcdNumber.print(), is(expected));
     }
 }

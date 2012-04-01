@@ -16,11 +16,11 @@ public class Scaler {
 
     private String[] scale_horizontally(String[] lines) {
         ArrayList<String> result = new ArrayList<String>();
-        for (String line : lines) result.add(scale(line));
+        for (String line : lines) result.add(scale_line(line));
         return result.toArray(new String[0]);
     }
 
-    private String scale(String line) {
+    private String scale_line(String line) {
         StringBuffer result = new StringBuffer();
         char[] chars = line.toCharArray();
         for (int column = 0; column < chars.length; column++) {

@@ -3,8 +3,8 @@ import java.util.ArrayList;
 public class Scaler {
 
     private static final int DEFAULT_SIZE = 1;
-    private static final int VERTICAL_SCALE_INTERVAL = 2;
-    private static final int HORIZONTAL_SCALE_INTERVAL = 3;
+    private static final int VERTICAL_SCALE_INTERVAL = 0;
+    private static final int HORIZONTAL_SCALE_INTERVAL = 0;
 
     private int size;
 
@@ -50,6 +50,6 @@ public class Scaler {
     }
 
     private int get_scale_for(int index, int interval) {
-        return ((index % interval) == 1) ? this.size : DEFAULT_SIZE;
+        return this.size;
     }
 }

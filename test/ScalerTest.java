@@ -12,7 +12,8 @@ public class ScalerTest {
             "abcabc"
         };
         String[] expected = {
-            "abbcabbc"
+            "aabbccaabbcc",
+            "aabbccaabbcc"
         };
         assertThat(scaler.scale(lines), is(expected));
     }
@@ -28,13 +29,16 @@ public class ScalerTest {
                 "5"
         };
         String[] expected = {
-                "1",
-                "2",
-                "2",
-                "3",
-                "4",
-                "4",
-                "5"
+                "11",
+                "11",
+                "22",
+                "22",
+                "33",
+                "33",
+                "44",
+                "44",
+                "55",
+                "55"
         };
         assertThat(scaler.scale(lines), is(expected));
     }
